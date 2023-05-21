@@ -6,7 +6,8 @@
   "main": "backend/index.js",
   "scripts": {
     "start": "node backend/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon backend/index.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "mongoose": "^7.1.1"
   },
   "devDependencies": {
+    "nodemon": "^2.0.22",
     "prettier": "2.8.8"
   }
 }
