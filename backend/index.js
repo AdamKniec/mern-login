@@ -2,6 +2,7 @@ import express from "express";
 const app = express();
 import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes.js";
+import { errorHandler, notFound } from "./middleware/ErrorHandling.js";
 
 dotenv.config();
 
@@ -11,7 +12,8 @@ app.use("/api/users", userRoutes);
 app.get("/", (req, res) => {
   res.send("Simple  server running on expresssssss");
 });
-
+app.use(notFound);
+app.use(errorHandler);
 app.listen(PORT, () => {
   console.log(`App running on port ${PORT}`);
 });
