@@ -1,8 +1,11 @@
 import express from "express";
-const app = express();
 import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes.js";
 import { errorHandler, notFound } from "./middleware/ErrorHandling.js";
+import { connectDb } from "./config/db.js";
+
+const app = express();
+connectDb();
 
 dotenv.config();
 
