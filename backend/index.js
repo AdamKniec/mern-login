@@ -11,9 +11,11 @@ dotenv.config();
 
 const PORT = process.env.PORT || 5001;
 
+app.use(express.json());
+
 app.use("/api/users", userRoutes);
 app.get("/", (req, res) => {
-  res.send("Simple  server running on expresssssss");
+  res.send("Simple  server running on express");
 });
 app.use(notFound);
 app.use(errorHandler);
