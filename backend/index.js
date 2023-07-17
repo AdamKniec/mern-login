@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes.js";
+import cookieParser from "cookie-parser";
 import { errorHandler, notFound } from "./middleware/ErrorHandling.js";
 import { connectDb } from "./config/db.js";
 
@@ -12,6 +13,8 @@ dotenv.config();
 const PORT = process.env.PORT || 5001;
 
 app.use(express.json());
+
+app.use(cookieParser());
 
 app.use("/api/users", userRoutes);
 app.get("/", (req, res) => {
